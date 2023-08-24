@@ -77,21 +77,20 @@ class GetHTML(Resource):
         })
     
 
+def get_ai_response(prompt):
+    # response = openai.Completion.create(
+    #     engine="text-davinci-003",
+    #     prompt=prompt,
+    #     temperature=0.7,
+    #     max_tokens=256,
+    #     top_p=1,
+    #     frequency_penalty=0,
+    #     presence_penalty=0,
+    # )
+    # return response.choices[0].text
 
-class GetCode(Resource):
-
-    def get(self, 
-            element, 
-            ):
-
-
-
-        # Decoding the base64 string
-        decoded_bytes = base64.b64decode(element)
-        decoded_string = decoded_bytes.decode('utf-8')
-
-        #sample code
-        code = """function extractDataAndConvertToCSV() {
+    #sample code
+    code = """function extractDataAndConvertToCSV() {
     // Get all elements with the specified classes
     const elements = document.querySelectorAll('.ml-auto.font-mono.text-xs');
 
@@ -110,6 +109,31 @@ const csv = extractDataAndConvertToCSV();
 console.log(csv);
 window.csv = csv;
 """
+
+    return code
+    
+
+
+class GetCode(Resource):
+
+    def get(self, 
+            element, 
+            ):
+
+
+
+        # Decoding the base64 string
+        decoded_bytes = base64.b64decode(element)
+        decoded_string = decoded_bytes.decode('utf-8')
+
+        print("element:", decoded_string)
+
+        prompt = f"""Write javascript code that accesses the data inside of all elements like this: {decoded_string}
+
+The data should then be arranged into a string that is a valid csv."""
+
+        code = get_ai_response(prompt)
+
         
 
 
