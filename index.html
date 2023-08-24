@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Processor</title>
-
+    <link rel="shortcut icon" href="https://w7.pngwing.com/pngs/417/624/png-transparent-url-shortening-computer-icons-uniform-resource-locator-firefox-firefox-blue-angle-text-thumbnail.png" type="image/x-icon">
     <!-- Linking Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    <style>
+        h1{
+            margin: 5px auto;
+            color: #007bff;
+            font-weight: bold;
+        }
+        div.card {
+            max-height: 250px;
+            overflow: scroll;
+            margin: auto;
+        }
+    </style>
     <!-- Optional jQuery and Bootstrap JS if needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -16,6 +27,8 @@
 
 <div class="container mt-5" style="max-width: 90%;">
     <div class="row">
+        <h1>Web Parser</h1>
+        <br>
         <div class="col-md-12">
             <h4>Your URL</h4>
             <div class="input-group mb-3">
@@ -23,6 +36,15 @@
             </div>
             <button class="btn btn-primary mb-4" id="urlbutton" onclick="processURL()">Submit</button>
             
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">HTML</div>
+                    <pre id="htmlBox" class="card-body" style="white-space: pre-wrap;"></pre>
+                </div>
+            </div>
+
+            <br><br>
+
             <h4>What do you want to parse?</h4>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter HTML element" id="elementInput">
@@ -33,20 +55,21 @@
 
     <!-- Display Boxes -->
     <div class="row mt-4">
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <div class="card">
                 <div class="card-header">HTML</div>
                 <pre id="htmlBox" class="card-body" style="white-space: pre-wrap;"></pre>
             </div>
-        </div>
-        <div class="col-md-3">
+        </div> -->
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">Code</div>
                 <pre id="codeBox" class="card-body" style="white-space: pre-wrap;"></pre>
             </div>
+            <br>
             <button class="btn btn-primary mb-4" id="runcodebutton" onclick="runCode()" disabled>Run Code</button>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">CSV</div>
                 <pre id="csvBox" class="card-body" style="white-space: pre-wrap;"></pre>
