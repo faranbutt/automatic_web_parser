@@ -23,7 +23,7 @@
             </div>
             <button class="btn btn-primary mb-4" id="urlbutton" onclick="processURL()">Submit</button>
             
-            <h4>HTML Element</h4>
+            <h4>What do you want to parse?</h4>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter HTML element" id="elementInput">
             </div>
@@ -94,6 +94,7 @@
     function processElement() {
         let element = document.getElementById('elementInput').value;
         let encodedElement = btoa(element);
+        document.getElementById('elementbutton').disabled = true;
 
         // Making an API request
         fetch(server_url + `/api/element/${encodedElement}`, {
@@ -105,8 +106,15 @@
                 })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('codeBox').textContent = data.code;
+                var code = data.code;
+                code = code.replace("document.", "window.shadowRoot.");
+                code = code.split("```javascript")[1];
+                // code = code.split("```")[0];
+                code += "console.log(csv);";
+                code += "\nwindow.csv = csv;";
+                document.getElementById('codeBox').textContent = code;
                 document.getElementById('runcodebutton').disabled = false;
+                
             })
             .catch(err => {
                 alert("There was an error processing the request:", err);
@@ -115,14 +123,16 @@
 
     function runCode() {
         var code = document.getElementById('codeBox').textContent;
-        code = code.replace("document.", "window.shadowRoot.");
         console.log("running code:");
         console.log(code);
         eval(code);
         document.getElementById('csvBox').textContent = window.csv;//this is set by the code that the server returns
     }
 
-    document.querySelectorAll("#urlInput")[0].value = "https://huggingface.co/TheBloke/stablecode-instruct-alpha-3b-GGML";
+    // document.querySelectorAll("#urlInput")[0].value = "https://huggingface.co/TheBloke/stablecode-instruct-alpha-3b-GGML";
+    document.querySelectorAll("#urlInput")[0].value = "https://en.wikipedia.org/wiki/Energy_density";
+    // document.querySelectorAll("#elementInput")[0].value = "all elements like this: ";
+    document.querySelectorAll("#elementInput")[0].value = "The data is located in the 4th <table> element on the page (indexed with [3] after using querySelectorAll). The table values often have duplicate spaces or new lines, use regex to remove them.";
 
 </script>
 
