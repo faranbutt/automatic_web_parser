@@ -102,7 +102,7 @@ $ git clone https://github.com/faranbutt/Web-Parser
 | Homan | https://www.linkedin.com/in/homan-mirgolbabaee/ |
 | Timothé Laborie  | https://github.com/timothelaborie|
 | Amna Islam | https://github.com/amna-islam-233639116|
-|Zain Ramzan | https://github.com/zain-ramzan|                                      |
+|Zain Ramzan | https://github.com/zainramzan7133|                                      |
 
 ## Hackathon Link
 
