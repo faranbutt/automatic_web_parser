@@ -78,18 +78,18 @@ View the Demo [App](https://www.youtube.com/watch?v=ojh5l7Mtepo&feature=youtu.be
 **Step #1** - Clone the project
 
 ```bash
-$ git clone https://github.com/faranbutt/Web-Parser
+$ git clone https://github.com/timothelaborie/automatic_web_parser/
 ```
 
 **Step #2**
 
-- To start the frontend, run: `npm run dev`
+- To start the frontend, run: `Open index.html`
 
-- For Backend, Install dependencies using: `pip install -r Backend/requirements.txt`
+- For Backend, Install dependencies using: `pip install -r requirements.txt`
 
 - To start the backend, run: `python server/server.py` or `python3 Backend/server/server.py`
 
-- Open  http://localhost:5173/ in your browser and start using
+- Paste the URL of the website to Scarap
 
 
 
