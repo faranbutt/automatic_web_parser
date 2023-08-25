@@ -36,6 +36,8 @@ https://web-parser.vercel.app/
 ## Server:
 https://murmuring-shelf-65331-c2595f93dc55.herokuapp.com/https://flask-server-0987-5a52a4e45237.herokuapp.com/
 
+## Note! Frontend Made with React is in this Repo:
+https://github.com/faranbutt/Web-Parser
 
 ## Video Demo
 
