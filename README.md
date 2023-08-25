@@ -7,7 +7,7 @@
 
 ## Application Description
 
-Web Parser Description
+This app lets the user automatically scrape websites by letting Stablecode generate JavaScript code to parse a part of the HTML and convert it to a CSV. Here is how our app works: The user enters a URL and the app returns the page's HTML. The user can then tell the AI where the data is located, and Stablecode will then write javascript file to parse the HTML and convert the relevant part into a csv. We are taking inputs from the user, that input will be HTML link that user wants to scrape and parse, we have the option given to user to select an element and write a prompt accordingly to scrap and parse that element from the given HTML link. Stablecode will generate JavaScript code to parse part of HTML and convert it into CSV format. This will help users to scrape websites and get JavaScript code for the selected element as well as the Downloadable CSV format code for the selected element.
 
 ## Table of Contents
 
@@ -106,7 +106,7 @@ $ git clone https://github.com/faranbutt/Web-Parser
 
 ## Hackathon Link
 
-Hackathon [Submission](https://lablab.ai/event/stablecode-24-hours-hackathon/visioneers)
+Hackathon [Submission](https://lablab.ai/event/stablecode-24-hours-hackathon/visioneers/easy-scrape-seamless-conversion-from-html-to-csv)
 
 ## License
 
