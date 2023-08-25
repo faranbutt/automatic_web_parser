@@ -99,7 +99,7 @@ $ git clone https://github.com/timothelaborie/automatic_web_parser/
 | --------------- | -------------------------------------- |
 | Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ |
 | Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ |
-| Homan | https://www.linkedin.com/in/homan-mirgolbabaee/ |
+| Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ |
 | Timothé Laborie  | https://github.com/timothelaborie|
 | Amna Islam | https://github.com/amna-islam-233639116|
 |Zain Ramzan | https://github.com/zainramzan7133|                                      |
