@@ -2,3 +2,7 @@ flask_cors
 flask_restful
 openai
 bs4
+numpy
+flask
+requests
+argparse

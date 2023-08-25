@@ -3,7 +3,7 @@ import os
 
 import numpy as np
 np.bool = bool
-import pandas as pd
+
 
 from flask import Flask
 from flask_cors import CORS
