@@ -69,6 +69,8 @@ class GetHTML(Resource):
         decoded_bytes = base64.b64decode(url)
         decoded_string = decoded_bytes.decode('utf-8')
 
+        print("url:", decoded_string)
+
         html = remove_text_from_html(decoded_string)
 
 
@@ -145,9 +147,9 @@ class GetCode(Resource):
 
         print("element:", decoded_string)
 
-        prompt = f"""Write javascript code that accesses the data from a web page.
+        prompt = f"""Write javascript code that accesses the data from a web page. Always use querySelectorAll to select elements.
 {decoded_string}
-
+The values often have duplicate spaces or new lines, use regex to remove them.
 The data should then be arranged into a string that is a valid csv. Store the csv string into a variable called 'csv', then console.log it. Make sure to put the code in a code block."""
 
         code = get_ai_response(prompt)
