@@ -187,12 +187,12 @@ def start_server():
     # API flag
     parser.add_argument(
         "--host",
-        default="127.0.0.1",
+        default="0.0.0.0",
         help="The host to run the server",
     )
     parser.add_argument(
         "--port",
-        default=8000,
+        default=os.environ.get("PORT"),
         help="The port to run the server",
     )
     parser.add_argument(
